@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Natural Conexión Brand Colors */
+    --background: 197 40% 97%; /* Blanco azulado EDF1F3 */
+    --foreground: 158 100% 15%; /* Verde oscuro para texto */
+
+    --card: 0 0% 100%;
+    --card-foreground: 158 100% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 158 100% 15%;
+
+    /* Verde oscuro Natural Conexión #09814E */
+    --primary: 158 83% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Verde jade #00A98F */
+    --secondary: 171 100% 33%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Verde menta suave #77D9C7 */
+    --muted: 170 52% 65%;
+    --muted-foreground: 158 100% 15%;
+
+    /* Azul brillante #0BB0E5 */
+    --accent: 192 92% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Amarillo advertencia #F59E0B */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Verde éxito #10B981 */
+    --success: 158 64% 52%;
+    --success-foreground: 0 0% 100%;
+
+    /* Gris azulado claro #DAE1E7 */
+    --border: 203 26% 88%;
+    --input: 203 26% 88%;
+    --ring: 158 83% 28%;
+
+    --radius: 0.75rem;
+
+    /* Custom brand colors */
+    --natural-green-dark: 158 83% 28%; /* #09814E */
+    --natural-green-jade: 171 100% 33%; /* #00A98F */
+    --natural-green-mint: 170 52% 65%; /* #77D9C7 */
+    --natural-blue-gray: 203 26% 88%; /* #DAE1E7 */
+    --natural-blue-bright: 192 92% 48%; /* #0BB0E5 */
+    --natural-white-blue: 197 40% 97%; /* #EDF1F3 */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--natural-green-dark)), hsl(var(--natural-green-jade)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--natural-white-blue)), hsl(var(--natural-blue-gray)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--natural-green-jade)), hsl(var(--natural-blue-bright)));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(var(--natural-green-dark) / 0.08);
+    --shadow-medium: 0 4px 16px hsl(var(--natural-green-dark) / 0.12);
+    --shadow-strong: 0 8px 24px hsl(var(--natural-green-dark) / 0.16);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 158 100% 15%;
+    --sidebar-primary: 158 83% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 197 40% 97%;
+    --sidebar-accent-foreground: 158 100% 15%;
+    --sidebar-border: 203 26% 88%;
+    --sidebar-ring: 158 83% 28%;
+  }
+
+  .dark {
+    --background: 158 100% 8%;
+    --foreground: 197 40% 97%;
+
+    --card: 158 100% 12%;
+    --card-foreground: 197 40% 97%;
+
+    --popover: 158 100% 12%;
+    --popover-foreground: 197 40% 97%;
+
+    --primary: 171 100% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 158 83% 20%;
+    --secondary-foreground: 197 40% 97%;
+
+    --muted: 158 50% 18%;
+    --muted-foreground: 170 52% 65%;
+
+    --accent: 192 92% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 158 64% 52%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 158 50% 18%;
+    --input: 158 50% 18%;
+    --ring: 171 100% 33%;
+
+    --sidebar-background: 158 100% 8%;
+    --sidebar-foreground: 197 40% 97%;
+    --sidebar-primary: 171 100% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 158 100% 12%;
+    --sidebar-accent-foreground: 197 40% 97%;
+    --sidebar-border: 158 50% 18%;
+    --sidebar-ring: 171 100% 33%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+
+  .font-accent {
+    font-family: 'Merienda', cursive;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+}
